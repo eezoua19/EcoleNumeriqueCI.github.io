@@ -1,4 +1,4 @@
-# ÉcoleNumériqueCI - Système de Gestion Scolaire
+# ÉcoleNumériqueCI - Système de Gestion Scolaire 
 
 ## 📋 Description
 ÉcoleNumériqueCI est un système de gestion scolaire moderne et ultra-dynamique conçu pour les établissements scolaires en Côte d'Ivoire. Cette application web offre une interface intuitive avec des animations avancées pour gérer efficacement tous les aspects de la vie scolaire.
@@ -210,7 +210,7 @@ Ce projet étant un fichier HTML unique, les contributions peuvent se faire par:
 - Modules supplémentaires (bibliothèque, cantine, etc.)
 
 ## 📄 Licence
-© 2024 ÉcoleNumériqueCI - Système de Gestion Scolaire
+© 2025 ÉcoleNumériqueCI - Système de Gestion Scolaire
 
 **Note**: Ce projet est destiné à des fins éducatives et démonstratives. Pour un usage en production, des modifications supplémentaires sont recommandées.
 
@@ -224,18 +224,6 @@ Ce projet étant un fichier HTML unique, les contributions peuvent se faire par:
 - **Version**: 4.0.0
 - **Dernière mise à jour**: 2024
 - **Statut**: En développement actif
-
-## 🌟 Fonctionnalités à Venir
-
-### Planifiées pour la Version 5.0
-- [ ] Notes & Évaluations complètes
-- [ ] Gestion des absences avancée
-- [ ] Emploi du temps interactif
-- [ ] Messagerie intégrée
-- [ ] Module financier
-- [ ] Paramètres avancés
-- [ ] Rapports PDF automatisés
-- [ ] Synchronisation cloud
 
 ---
 
