@@ -222,7 +222,7 @@ Ce projet étant un fichier HTML unique, les contributions peuvent se faire par:
 
 ### Informations de Version
 - **Version**: 4.0.0
-- **Dernière mise à jour**: 2024
+- **Dernière mise à jour**: 2025
 - **Statut**: En développement actif
 
 ---
