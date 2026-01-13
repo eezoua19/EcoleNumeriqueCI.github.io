@@ -496,15 +496,60 @@
         }
         
         /* Styles pour la page de connexion */
-        .login-container {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
+    .login-container {
+    background: 
+        /* Effets de lumière dorée */
+        radial-gradient(circle at 15% 25%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(217, 119, 6, 0.1) 0%, transparent 50%),
+        
+        /* Texture subtile */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 1px,
+            rgba(245, 158, 11, 0.02) 1px,
+            rgba(245, 158, 11, 0.02) 2px
+        ),
+        
+        /* Fond noir profond */
+        linear-gradient(135deg, 
+            #000000 0%,
+            #0a0a0a 25%,
+            #111827 50%,
+            #1f2937 75%,
+            #374151 100%
+        );
+    
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de poussière d'or */
+.login-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.1) 0px, transparent 2px),
+        radial-gradient(circle at 40% 70%, rgba(245, 158, 11, 0.08) 0px, transparent 3px),
+        radial-gradient(circle at 60% 20%, rgba(245, 158, 11, 0.06) 0px, transparent 2px),
+        radial-gradient(circle at 80% 50%, rgba(245, 158, 11, 0.04) 0px, transparent 3px);
+    background-size: 200px 200px;
+    animation: floatGold 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes floatGold {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 200px; }
+} 
         
         .login-container::before {
             content: '';
@@ -517,61 +562,117 @@
             background-size: cover;
         }
         
-        .login-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 1.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: slideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
+       .login-card {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(25px) saturate(200%);
+    border-radius: 1.5rem;
+    box-shadow: 
+        0 30px 60px -12px rgba(0, 0, 0, 0.8),
+        0 0 0 2px rgba(245, 158, 11, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 20px rgba(245, 158, 11, 0.05);
+    border: 2px solid rgba(245, 158, 11, 0.2);
+    animation: slideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Bordure dorée animée */
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        transparent 25%, 
+        rgba(245, 158, 11, 0.5) 50%, 
+        transparent 75%
+    );
+    background-size: 200% 200%;
+    border-radius: 1.6rem;
+    animation: shineBorder 3s linear infinite;
+    z-index: -1;
+}
+
+@keyframes shineBorder {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.login-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(245, 158, 11, 0.8),
+        rgba(217, 119, 6, 0.8),
+        rgba(245, 158, 11, 0.8),
+        transparent
+    );
+    border-radius: 1.5rem 1.5rem 0 0;
+}
         
         .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-        
-        .shape {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 15s infinite linear;
-        }
-        
-        .shape:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .shape:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 70%;
-            left: 80%;
-            animation-delay: -5s;
-        }
-        
-        .shape:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            top: 20%;
-            left: 85%;
-            animation-delay: -10s;
-        }
-        
-        .shape:nth-child(4) {
-            width: 100px;
-            height: 100px;
-            top: 80%;
-            left: 15%;
-            animation-delay: -7s;
-        }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.shape {
+    position: absolute;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: float 15s infinite linear;
+}
+
+.shape:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 10%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent 70%);
+    animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+    width: 300px;
+    height: 300px;
+    top: 70%;
+    left: 80%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent 70%);
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+.shape:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    left: 85%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+    animation-delay: -10s;
+    animation-duration: 25s;
+}
+
+.shape:nth-child(4) {
+    width: 250px;
+    height: 250px;
+    top: 80%;
+    left: 15%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.25), transparent 70%);
+    animation-delay: -7s;
+    animation-duration: 18s;
+}
     </style>
 </head>
 <body class="antialiased">
